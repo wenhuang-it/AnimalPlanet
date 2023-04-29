@@ -14,7 +14,7 @@ public class JavaMail {
 	// ---------------------------------------------------------基本資料
 
 	private String userName = "example.sender@gmail.com"; // 寄件者信箱
-	private String password = "hyzpsjidisjdssdsdd"; // 寄件者密碼
+	private String password = "example_password"; // 寄件者密碼
 	public String customer = ""; // 收件者郵箱
 	
 	private String subject = "驗證 Animal Planet 使用的電子郵件地址"; // 標題
