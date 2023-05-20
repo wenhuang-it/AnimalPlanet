@@ -37,15 +37,10 @@ public class MemberApiController {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private JavaMail javamail;
 
-//	@Autowired
-//	private MemberRepository memberRepository;
-
-///////////////////////////////////////////////////////  楊導測試  ///////////////////////////////////////////////////////
-	@PostMapping("/postmemapi")
-	public Member testInsert(@RequestBody Member mem) {
-		return memberService.save(mem);
-	}
 
 //---------------------------------------------  會員登入  ---------------------------------------------
 
@@ -88,7 +83,7 @@ public class MemberApiController {
 		Member res = memberService.save(member);
 
 //		// 發信到client email		
-		JavaMail mail = new JavaMail();
+// 		JavaMail mail = new JavaMail();
 		mail.SendMail(res.getuId(), res.getAccount(), res.geteMail());
 
 		return res; // 回傳給前端
