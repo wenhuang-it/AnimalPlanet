@@ -64,29 +64,18 @@ public class MemberApiController {
 
 //---------------------------------------------  新增會員  ---------------------------------------------
 	@PostMapping(path = { "/registerApi" })
-	public Member register(@RequestBody Member member) { // Member member 為前端傳進來的物件
-
-//		設定創立時間
-//		String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());	
+	public Member register(@RequestBody Member member) { 
+		// 設定創立時間
 		Date date = new Date();
 		member.setCreateDate(date);
-
 		// 1:驗證中
 		member.setStatus(1);
-
 		// 2:普通會員
 		member.setRole(2);
-
-		// 对密码进行加密
 		member.setPassword(passwordEncoder.encode(member.getPassword()));
-
 		Member res = memberService.save(member);
-
-//		// 發信到client email		
-// 		JavaMail mail = new JavaMail();
 		mail.SendMail(res.getuId(), res.getAccount(), res.geteMail());
-
-		return res; // 回傳給前端
+		return res;
 	}
 
 	// --------------------------------------------- 新增會員寵物 ---------------------------------------------
@@ -106,13 +95,12 @@ public class MemberApiController {
 	@PostMapping(path = { "/lineRegisterApi" })
 	public Member lineRegister(@RequestBody Member member) {
 
-//			設定創立時間
-//			String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());	
+		// 設定創立時間
 		Date date = new Date();
 		member.setCreateDate(date);
 
 		// 設定密碼
-//		member.setPassword("line");
+		// member.setPassword("line");
 		member.setPassword(passwordEncoder.encode("line"));
 
 		// 0: 直接可用
