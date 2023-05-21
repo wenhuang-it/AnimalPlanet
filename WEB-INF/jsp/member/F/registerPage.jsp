@@ -7,28 +7,10 @@
         <head>
             <title>登入</title>
             <style>
-                /* *{
-            margin: 0;
-            padding: 0;
-        }
-
-        html{
-            background: beige;
-        }
-
-        #title{
-            font-family: initial;
-            color: #0D47A1;
-            font-size: 20px;
-            display: inline-block;
-        }*/
-
                 #container {
                     text-align: center;
                     justify-content: center;
                 }
-
-                */
             </style>
         </head>
 
