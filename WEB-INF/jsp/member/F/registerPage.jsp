@@ -72,19 +72,10 @@
 
 
                 $(function () {
-
                     $("#submit").on("click", function () {
                         let account_id = $("#account-id").val();
                         let password = $("#password").val();
                         let email = $("#email").val();
-
-
-                        console.log(account_id);
-                        console.log(password);
-                        console.log(email);
-
-
-
 
                         let data =
                         {
@@ -93,13 +84,12 @@
                             'eMail': email,
                         }
 
-                        let dataStr = JSON.stringify(data);
-                        console.log(dataStr);
+                        let dataStr = JSON.stringify(data); 
 
                         $.ajax({
-                            url: "/AnimalPlanet/registerApi",
+                            url: "/AnimalPlanet/registerApi", 
                             type: "POST",
-                            data: dataStr, //物件字串(json)
+                            data: dataStr,
                             dataType: 'json',
                             contentType: 'application/json; charset=UTF-8',
                             success: function (res) {
@@ -111,9 +101,7 @@
                                 alert("系統錯誤，請聯絡系統管理員");
                             }
                         });
-
                     })
-
                 })
 
 
