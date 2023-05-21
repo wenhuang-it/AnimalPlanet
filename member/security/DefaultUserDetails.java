@@ -16,8 +16,8 @@ import iSpan.animalplanet.model.MemberPet;
 
 public class DefaultUserDetails implements UserDetails {
 
-		private String account;
-	 	private Integer userId;
+	    private String account;
+	    private Integer userId;
 	    private String password;
 	    private Integer status;
 	    private List<GrantedAuthority> authorities = new ArrayList<>();
