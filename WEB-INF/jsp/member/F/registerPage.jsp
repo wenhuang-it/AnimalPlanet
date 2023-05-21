@@ -98,7 +98,6 @@
 
                         $.ajax({
                             url: "/AnimalPlanet/registerApi",
-                            // url: "/AnimalPlanet/register", 
                             type: "POST",
                             data: dataStr, //物件字串(json)
                             dataType: 'json',
