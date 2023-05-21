@@ -55,22 +55,6 @@
                 integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
             <script>
-                // member賦值
-                const formember = document.getElementById('formember')
-                const aid = document.getElementById('account-id')
-                const pas = document.getElementById('password')
-                const ema = document.getElementById('email')
-
-
-                formember.addEventListener('click', e => {
-                    aid.value = 'member123';
-                    pas.value = '123456';
-                    ema.value = 'eeit57ap777@gmail.com';
-                })
-
-                /////////////////////////////////////////////////////////////////
-
-
                 $(function () {
                     $("#submit").on("click", function () {
                         let account_id = $("#account-id").val();
