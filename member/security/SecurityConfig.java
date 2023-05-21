@@ -42,41 +42,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(userDetailsService).passwordEncoder(password());
 	}
 
-//	@Override
-//	public void configure(WebSecurity web) throws Exception {
-//		web.ignoring().antMatchers("/css/**", "/js/**", "/index.html", "/img/**", "/fonts/**", "/favicon.ico", "/verifyCode");
-//	}
-
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.formLogin() // 自定義登入頁面
-
-//	            .loginPage("/login.html")
 	            .loginPage("/login")
 //	        
 //	            .loginProcessingUrl("/user/login")
-				.loginProcessingUrl("/login") // 設定登入頁面的url
-
-			
-				
-//				.defaultSuccessUrl("/") // 成功登入之後導向
-				.successHandler(customLoginSuccessHandler)
-
-				
-							
-				
-//				// 登入成功之後要造訪的頁面
-//				.successForwardUrl("/member/registerPage")  
-//				// 登入失敗後要造訪的頁面
-				//.failureUrl("/member/loginFailPage")  // 這個才會跳頁
-//				.failureForwardUrl("/member/loginFailPage")
-				.failureHandler(loginFailHandler())
+	            .loginProcessingUrl("/login") // 設定登入頁面的url
+//		    .defaultSuccessUrl("/") // 成功登入之後導向
+		    .successHandler(customLoginSuccessHandler)
+		
+		    // 登入成功之後要造訪的頁面
+//		    .successForwardUrl("/member/registerPage")  
+		    // 登入失敗後要造訪的頁面
+//                  .failureUrl("/member/loginFailPage")  // 這個才會跳頁
+//		    .failureForwardUrl("/member/loginFailPage")
+	            .failureHandler(loginFailHandler())
 				
 				
-				.and().authorizeRequests() // 表示要定義哪些被保護，哪些不需要保護（不需要認證）
-				// 先設定不用通過的
-				.antMatchers("/**").permitAll() 
+		    .and().authorizeRequests() // 表示要定義哪些被保護，哪些不需要保護（不需要認證）
+		    // 先設定不用通過的
+		    .antMatchers("/**").permitAll() 
 				
 //				.antMatchers("/").permitAll()
 //				.antMatchers("/login").permitAll()
