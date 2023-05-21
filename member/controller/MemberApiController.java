@@ -78,7 +78,7 @@ public class MemberApiController {
 		return res;
 	}
 
-	// --------------------------------------------- 新增會員寵物 ---------------------------------------------
+// --------------------------------------------- 新增會員寵物 ---------------------------------------------
 
 	@PostMapping(path = { "/addMemberPetApi/{memberId}" })
 	public MemberPet addMemberPetApi(@PathVariable Integer memberId, @RequestBody MemberPet memberPet) {
@@ -91,7 +91,7 @@ public class MemberApiController {
 		return res; // 回傳給前端
 	}
 
-	// --------------------------------------------- LINE新增會員 ---------------------------------------------
+// --------------------------------------------- LINE新增會員 ---------------------------------------------
 	@PostMapping(path = { "/lineRegisterApi" })
 	public Member lineRegister(@RequestBody Member member) {
 
@@ -243,12 +243,8 @@ public class MemberApiController {
 //		
 //		return res;
 //	}
-
 	
-	
-	
-	//---------------------------------------------  後台: 取所有會員  ---------------------------------------------
-
+//---------------------------------------------  後台: 取所有會員  ---------------------------------------------
 //	@ResponseBody
 //	@PostMapping(path = { "/getAllMembersApi" })
 //	public List<Member> findAllCustomer(){
